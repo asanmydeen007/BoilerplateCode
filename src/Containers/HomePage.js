@@ -168,7 +168,11 @@ const Scrollbtn = ({ title }) => {
 const ImageView = props => {
   return (
     <View style={{ margin: 12, flexDirection: 'column' }}>
-      <TouchableOpacity onPress={() => navigate('MyCart')}>
+      <TouchableOpacity
+        onPress={() =>
+          navigate('MyCart', { img: props.img, productName: props.productName })
+        }
+      >
         <Image
           style={{ height: 200, width: 140, borderRadius: 9, marginBottom: 10 }}
           source={props.img}

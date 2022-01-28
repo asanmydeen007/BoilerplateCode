@@ -20,8 +20,9 @@ import {
 import { useTheme } from '@/Hooks'
 import { navigate } from '@/Navigators/utils'
 
-export default function CartPage() {
+export default function CartPage(params) {
   const { Layout, Images } = useTheme()
+  // console.log(params.route.params.img)
   return (
     <ScrollView style={{ backgroundColor: '#fff', flex: 1 }}>
       <View
@@ -76,7 +77,7 @@ export default function CartPage() {
               width: '100%',
               borderRadius: 12,
             }}
-            source={Images.shirt}
+            source={params.route.params.img}
           />
           <View
             style={{
@@ -97,7 +98,7 @@ export default function CartPage() {
                 Outer
               </Text>
               <Text style={{ fontSize: 25, fontWeight: '700', color: '#000' }}>
-                Casual Shirts
+                {params.route.params.productName}
               </Text>
               <View
                 style={{
